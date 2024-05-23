@@ -899,6 +899,10 @@ TLegend *legend = new TLegend(0.7, 0.7, 0.9, 0.9);
 legend->AddEntry(h_timeOfFlight_TopBottom, "Top-Bottom", "l");
 legend->AddEntry(h_timeOfFlight_UpstreamDownstream, "Upstream-Downstream", "l");
 legend->AddEntry(h_timeOfFlight_NorthSouth, "North-South", "l");
+// Set axis labels and title
+h_timeOfFlight_TopBottom->GetXaxis()->SetTitle("Time of Flight [ns]");
+h_timeOfFlight_TopBottom->GetYaxis()->SetTitle("Counts");
+c_planePairsToF->SetTitle("Time of Flight for Plane Pairs");
 
 // Save the canvas
 c_planePairsToF->SaveAs(Form("%srun%i_planePairsToF.pdf", output_directory.c_str(), thisRun.GetRunNumber()));
